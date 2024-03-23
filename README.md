@@ -11,7 +11,6 @@ game.Players.LocalPlayer.Character:FindFirstChild("Collision").Position=game.Pla
                end
 end)
 end
-if _G.Mode then
 if _G.English then
 if game:GetService("ReplicatedStorage").GameData.Floor.Value ~= "Backdoor" then
 	return
@@ -900,4 +899,3 @@ _G.NoLight = true
 game:GetService("RunService").RenderStepped:Connect(function()pcall(function()if _G.NoLight then if game.workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Assets"):FindFirstChild("Chandelier") then game.workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Assets").Chandelier:Destroy();end end end);end);game:GetService("RunService").RenderStepped:Connect(function()pcall(function()if _G.NoLight then if game.workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Assets"):FindFirstChild("Light_Fixtures") then game.workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Assets").Light_Fixtures:Destroy();end end end);end)
 _G.NoLight = true
    end
-end
