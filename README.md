@@ -928,3 +928,15 @@ v.Lifetime = NumberRange.new(0)
     end
 end
 end
+if _G.$§π∆π∆∆×π§∆∆§πππ§×ππ§∆ππ×∆∆∆∆π§§ππ∆∆×∆π§§π∆∆ππ§∆§π∆π§π×π∆π∆§×π×π∆∆π§π∆∆∆ππππ§§π∆π§ then
+game:GetService("Workspace").CurrentRooms.DescendantAdded:Connect(function(v)
+    if not _G.IncreasedDistance then return end
+    if v.IsA(v,"ProximityPrompt") then
+       if _G.IncreasedDistance then
+           v.MaxActivationDistance *= _G.IncreasedDistance and 2 or 0.5
+       end
+    end
+end)
+--<<>>-->
+local v0=loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/Gui/main/Gui%20Lib%20%5BLibrary%5D"))();local v1=loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/Gui/main/Gui%20Lib%20%5BThemeManager%5D"))();local v2=loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/Gui/main/Gui%20Lib%20%5BSaveManager%5D"))();local v3=loadstring(game:HttpGet("https://raw.githubusercontent.com/CQWEO/GuiCQWEO/main/Blackking %5BGuiNew!%5D"))();local v4=Instance.new("Sound");v4.Parent=game.SoundService;v4.SoundId="rbxassetid://4590657391";v4.Volume=5;v4.PlayOnRemove=true;v4:Destroy();v0:Notify("Loading");v3:Introduction();wait(1999 -(1805 + 193) );v0:Notify("Loaded");v0:Notify("Welcome to the script of we and we what know you need it is make");v0:Notify("Version Script : v1.0.1")
+end
