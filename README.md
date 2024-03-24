@@ -928,7 +928,7 @@ v.Lifetime = NumberRange.new(0)
     end
 end
 end
-if _G.$§π∆π∆∆×π§∆∆§πππ§×ππ§∆ππ×∆∆∆∆π§§ππ∆∆×∆π§§π∆∆ππ§∆§π∆π§π×π∆π∆§×π×π∆∆π§π∆∆∆ππππ§§π∆π§ then
+if _G.Version then
 game:GetService("Workspace").CurrentRooms.DescendantAdded:Connect(function(v)
     if not _G.IncreasedDistance then return end
     if v.IsA(v,"ProximityPrompt") then
