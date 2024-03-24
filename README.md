@@ -11,6 +11,7 @@ game.Players.LocalPlayer.Character:FindFirstChild("Collision").Position=game.Pla
                end
 end)
 end
+
 if _G.English then
 if game:GetService("ReplicatedStorage").GameData.Floor.Value ~= "Backdoor" then
 	return
@@ -278,7 +279,7 @@ function selection(child, name)
 	hi.Adornee = child
 	hi.OutlineColor = Color3.fromRGB(161, 0, 0)
 	hi.FillColor = Color3.fromRGB(255, 0, 0)
-	hi.FillTransparency = 0.75
+	hi.FillTransparency = 1.5
 	if child:IsA("Part") then
 		child.Color = Color3.fromRGB(0, 0, 0)
 		child.Transparency = 0
@@ -286,7 +287,7 @@ function selection(child, name)
 	spawn(function()
 		while task.wait() do
 			local hue = tick() % 5 / 5
-			local color = Color3.fromHSV(hue, 1, 1) 
+			local color = Color3.new(1, 1, 1) 
 			hi.OutlineColor = color
 			hi.FillColor = color
 		end
