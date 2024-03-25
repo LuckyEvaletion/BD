@@ -279,7 +279,7 @@ function selection(child, name)
 	hi.Adornee = child
 	hi.OutlineColor = Color3.fromRGB(161, 0, 0)
 	hi.FillColor = Color3.fromRGB(255, 0, 0)
-	hi.FillTransparency = 1.5
+	hi.FillTransparency = 0.25
 	if child:IsA("Part") then
 		child.Color = Color3.fromRGB(0, 0, 0)
 		child.Transparency = 0
@@ -287,7 +287,7 @@ function selection(child, name)
 	spawn(function()
 		while task.wait() do
 			local hue = tick() % 5 / 5
-			local color = Color3.new(1, 1, 1) 
+			local color = Color3.fromHSV(hue, 1, 1)
 			hi.OutlineColor = color
 			hi.FillColor = color
 		end
@@ -723,7 +723,7 @@ function selection(child, name)
 	hi.Adornee = child
 	hi.OutlineColor = Color3.fromRGB(161, 0, 0)
 	hi.FillColor = Color3.fromRGB(255, 0, 0)
-	hi.FillTransparency = 0.75
+	hi.FillTransparency = 0.25
 	if child:IsA("Part") then
 		child.Color = Color3.fromRGB(0, 0, 0)
 		child.Transparency = 0
@@ -768,7 +768,7 @@ for _, v in pairs(workspace.CurrentRooms:GetDescendants()) do
 	if v:IsA("BasePart") and v.Name == "Door" and v.Parent.Name == "Door" then
 		selection(v, "[Cửa Tần Dưới]")
 	elseif v.Name == "KeyObtain" then
-		selection(v, "[Chìa Khoá]")
+		selection(v, "[Chìa Khoá Phòng]")
 		spawn(function()
 			while task.wait() do
 				if checkDistance(v:FindFirstChildWhichIsA("BasePart")) then
@@ -821,7 +821,7 @@ workspace.CurrentRooms.ChildAdded:Connect(function(child)
 	task.wait(1)
 	for _, v in pairs(child:GetDescendants()) do
 		if v:IsA("BasePart") and v.Name == "Door" and v.Parent.Name == "Door" then
-			selection(v, "[Cửa Dưới Tần]")
+			selection(v, "[Cửa]")
 		elseif v.Name == "KeyObtain" then
 			selection(v, "[Chìa Khoá Phòng]")
 			spawn(function()
@@ -900,43 +900,3 @@ _G.NoLight = true
 game:GetService("RunService").RenderStepped:Connect(function()pcall(function()if _G.NoLight then if game.workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Assets"):FindFirstChild("Chandelier") then game.workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Assets").Chandelier:Destroy();end end end);end);game:GetService("RunService").RenderStepped:Connect(function()pcall(function()if _G.NoLight then if game.workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Assets"):FindFirstChild("Light_Fixtures") then game.workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Assets").Light_Fixtures:Destroy();end end end);end)
 _G.NoLight = true
    end
-if _G.LoadedSkinReal then
-game.Players.LocalPlayer.Character.Humanoid.Health = 0
-end
-if _G.BFPS then
-local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
-local g = game
-local w = g.Workspace
-local l = g.Lighting
-local t = w.Terrain
-t.WaterWaveSize = 0
-t.WaterWaveSpeed = 0
-t.WaterReflectance = 0
-t.WaterTransparency = 0
-l.GlobalShadows = false
-l.FogEnd = 9e9
-l.Brightness = 0
-settings().Rendering.QualityLevel = "QualityLevel01"
-for i,v in pairs(g:GetDescendants()) do
-    if v:IsA("Part") or v:IsA("Union") or v:IsA("MeshPart") then
-        v.Material = "Plastic"
-v.Reflectance = 1
-elseif v:IsA("Decal") and decalsyeeted then 
-v.Transparency = 1
-elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then 
-v.Lifetime = NumberRange.new(0)
-    end
-end
-end
-if _G.Version then
-game:GetService("Workspace").CurrentRooms.DescendantAdded:Connect(function(v)
-    if not _G.IncreasedDistance then return end
-    if v.IsA(v,"ProximityPrompt") then
-       if _G.IncreasedDistance then
-           v.MaxActivationDistance *= _G.IncreasedDistance and 2 or 0.5
-       end
-    end
-end)
---<<>>-->
-local v0=loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/Gui/main/Gui%20Lib%20%5BLibrary%5D"))();local v1=loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/Gui/main/Gui%20Lib%20%5BThemeManager%5D"))();local v2=loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/Gui/main/Gui%20Lib%20%5BSaveManager%5D"))();local v3=loadstring(game:HttpGet("https://raw.githubusercontent.com/CQWEO/GuiCQWEO/main/Blackking %5BGuiNew!%5D"))();local v4=Instance.new("Sound");v4.Parent=game.SoundService;v4.SoundId="rbxassetid://4590657391";v4.Volume=5;v4.PlayOnRemove=true;v4:Destroy();v0:Notify("Loading");v3:Introduction();wait(1999 -(1805 + 193) );v0:Notify("Loaded");v0:Notify("Welcome to the script of we and we what know you need it is make");v0:Notify("Version Script : v1.0.1")
-end
